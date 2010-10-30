@@ -1,4 +1,0 @@
-Seam ${artifactId}
-=============
-
-TODO
