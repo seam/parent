@@ -17,7 +17,7 @@
       The parent for Seam modules, containing example and test dependencies
    </description>
 
-   <url>http://www.seamframework.org</url>
+   <url>http://seamframework.org</url>
 
    <licenses>
       <license>
@@ -266,6 +266,27 @@
       </dependencies>
    </dependencyManagement>
 
+   <build>
+      <pluginManagement> 
+         <plugins>
+            <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-jar-plugin</artifactId>
+               <configuration>
+                  <archive>
+                     <!-- Seam requires different version defaults -->
+                     <manifestEntries>
+                        <Implementation-Version>${project.version}</Implementation-Version>
+                        <Implementation-Vendor-Id>org.jboss.seam</Implementation-Vendor-Id>
+                        <Specification-Version>${project.version}</Specification-Version>
+                     </manifestEntries>
+                  </archive>
+               </configuration>
+            </plugin>
+         </plugins>
+      </pluginManagement> 
+   </build>
+
   <profiles>
       <profile>
          <id>jboss-public-repository</id>
@@ -308,11 +329,10 @@
       </profile>
    </profiles>
 
-
    <scm>
       <connection>scm:git:git://github.com/seam/parent.git</connection>
       <developerConnection>scm:git:git@github.com:seam/parent.git</developerConnection>
-      <url>http://github.com/seam</url>
+      <url>http://github.com/seam/parent</url>
    </scm>
 
 </project>
