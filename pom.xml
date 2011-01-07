@@ -43,14 +43,17 @@
       <junit.version>4.8.1</junit.version>
       <mockito.version>1.8.4</mockito.version>
       <arquillian.version>1.0.0.Alpha4</arquillian.version>
-      <jetty.version>8.0.0.M1</jetty.version>
+      <mortbay.jetty.version>6.1.21</mortbay.jetty.version>
+      <eclipse.jetty.version>8.0.0.M1</eclipse.jetty.version>
 
       <slf4j.version>1.5.10</slf4j.version>
 
-      <weld.version>1.1.0.CR2</weld.version>
+      <weld.api.version>1.1.Beta2</weld.api.version>
+      <weld.version>1.1.0.CR4</weld.version>
 
       <glassfish.el.version>2.2.1-b04</glassfish.el.version>
 
+      <jboss.logging.tools>1.0.0.Beta1</jboss.logging.tools>
       <hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
       <hibernate.core.version>3.6.0.Final</hibernate.core.version>
       <openjpa.version>2.0.0</openjpa.version>
@@ -67,6 +70,13 @@
 
    <dependencyManagement>
       <dependencies>
+
+         <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging-tools</artifactId>
+            <version>${jboss.logging.tools}</version>
+            <scope>provided</scope>
+         </dependency>
 
          <dependency>
             <groupId>org.testng</groupId>
@@ -91,7 +101,7 @@
 
          <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito</artifactId>
+            <artifactId>mockito-all</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
          </dependency>
@@ -167,15 +177,39 @@
          </dependency>
 
          <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty</artifactId>
+            <version>${mortbay.jetty.version}</version>
+         </dependency>
+
+         <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jsp-2.1-jetty</artifactId>
+            <version>${mortbay.jetty.version}</version>
+         </dependency>
+
+         <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-naming</artifactId>
+            <version>${mortbay.jetty.version}</version>
+         </dependency>
+
+         <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-plus</artifactId>
+            <version>${mortbay.jetty.version}</version>
+         </dependency>
+
+         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
-            <version>${jetty.version}</version>
+            <version>${eclipse.jetty.version}</version>
          </dependency>
 
          <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-plus</artifactId>
-            <version>${jetty.version}</version>
+            <version>${eclipse.jetty.version}</version>
             <exclusions>
                <exclusion>
                   <groupId>org.apache.geronimo.specs</groupId>
@@ -194,6 +228,27 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+         </dependency>
+
+         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+         </dependency>
+
+         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+         </dependency>
+
+         <dependency>
+            <groupId>org.jboss.weld</groupId>
+            <artifactId>weld-api</artifactId>
+            <version>${weld.api.version}</version>
          </dependency>
 
          <dependency>
@@ -330,7 +385,6 @@
             </plugin>
             <plugin>
               <artifactId>maven-javadoc-plugin</artifactId>
-              <version>2.7</version>
               <configuration>
                 <links>
                    <link>http://download.oracle.com/javaee/6/api</link>
@@ -341,9 +395,36 @@
             </plugin>
          </plugins>
       </pluginManagement>
+      <plugins>
+         <plugin>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <version>1.0</version>
+            <executions>
+               <execution>
+                  <id>enforce</id>
+                  <!-- discard rules from weld-parent -->
+                  <phase>none</phase>
+               </execution>
+               <execution>
+                  <id>seam-build-req</id>
+                  <goals>
+                     <goal>enforce</goal>
+                  </goals>
+                  <inherited>true</inherited>
+                  <configuration>
+                     <rules>
+                        <requireMavenVersion>
+                           <version>[3.0.0,)</version>
+                        </requireMavenVersion>
+                     </rules>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
    </build>
 
-  <profiles>
+   <profiles>
       <profile>
          <id>jboss-public-repository</id>
          <activation>
