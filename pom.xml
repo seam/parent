@@ -43,7 +43,7 @@
       <junit.version>4.8.1</junit.version>
       <mockito.version>1.8.4</mockito.version>
       <arquillian.version>1.0.0.Alpha4</arquillian.version>
-      <mortbay.jetty.version>6.1.21</mortbay.jetty.version>
+      <mortbay.jetty.version>6.1.26</mortbay.jetty.version>
       <eclipse.jetty.version>8.0.0.M1</eclipse.jetty.version>
 
       <slf4j.version>1.5.10</slf4j.version>
@@ -59,13 +59,13 @@
       <openjpa.version>2.0.0</openjpa.version>
 
       <jsf.impl.version>2.0.2</jsf.impl.version>
-      <jsfmock.version>1.0.0</jsfmock.version>
-      <pretty.faces.version>3.1.0</pretty.faces.version>
+      <jsfmock.version>1.0.6</jsfmock.version>
+      <prettyfaces.version>3.1.0</prettyfaces.version>
       <hsqldb.version>1.8.0.10</hsqldb.version>
 
-      <jbossas.servermanager.version>1.0.3.GA</jbossas.servermanager.version>
-      <jbossas.client.version>6.0.0.20101110-CR1</jbossas.client.version>
-      <glassfish.server.version>3.1-b33</glassfish.server.version>
+      <jbossas.servermanager.version>1.0.4.Final</jbossas.servermanager.version>
+      <jbossas.client.version>6.0.0.Final</jbossas.client.version>
+      <glassfish.server.version>3.1-b37</glassfish.server.version>
    </properties>
 
    <dependencyManagement>
@@ -130,6 +130,13 @@
          <dependency>
             <groupId>org.jboss.arquillian.container</groupId>
             <artifactId>arquillian-glassfish-embedded-3</artifactId>
+            <version>${arquillian.version}</version>
+            <scope>test</scope>
+         </dependency>
+
+         <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-glassfish-remote-3</artifactId>
             <version>${arquillian.version}</version>
             <scope>test</scope>
          </dependency>
@@ -321,19 +328,19 @@
          <dependency>
             <groupId>com.ocpsoft</groupId>
             <artifactId>prettyfaces-jsf11</artifactId>
-            <version>${pretty.faces.version}</version>
+            <version>${prettyfaces.version}</version>
          </dependency>
 
          <dependency>
             <groupId>com.ocpsoft</groupId>
             <artifactId>prettyfaces-jsf12</artifactId>
-            <version>${pretty.faces.version}</version>
+            <version>${prettyfaces.version}</version>
          </dependency>
 
          <dependency>
             <groupId>com.ocpsoft</groupId>
             <artifactId>prettyfaces-jsf2</artifactId>
-            <version>${pretty.faces.version}</version>
+            <version>${prettyfaces.version}</version>
          </dependency>
 
          <dependency>
@@ -370,7 +377,13 @@
       <pluginManagement>
          <plugins>
             <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <configuration>
+                  <source>1.6</source>
+                  <target>1.6</target>
+               </configuration>
+            </plugin>
+            <plugin>
                <artifactId>maven-jar-plugin</artifactId>
                <configuration>
                   <archive>
@@ -413,6 +426,9 @@
                   <inherited>true</inherited>
                   <configuration>
                      <rules>
+                        <requireJavaVersion>
+                           <version>1.6.0</version>
+                        </requireJavaVersion>
                         <requireMavenVersion>
                            <version>[3.0.0,)</version>
                         </requireMavenVersion>
@@ -425,6 +441,33 @@
    </build>
 
    <profiles>
+      <profile>
+         <id>distribution</id>
+         <activation>
+            <property>
+               <name>release</name>
+            </property>
+         </activation>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-javadoc-plugin</artifactId>
+                  <executions>
+                     <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                           <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                           <detectOfflineLinks>false</detectOfflineLinks>
+                        </configuration>
+                     </execution>
+                  </executions>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
       <profile>
          <id>jboss-public-repository</id>
          <activation>
