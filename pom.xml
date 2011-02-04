@@ -22,9 +22,9 @@
 
    <licenses>
       <license>
-         <name>GNU Lesser General Public License, Version 2.1</name>
+         <name>Apache License, Version 2.0</name>
          <distribution>repo</distribution>
-         <url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
+         <url>http://www.apache.org/licenses/LICENSE-2.0</url>
       </license>
    </licenses>
 
