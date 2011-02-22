@@ -5,7 +5,7 @@
    <groupId>org.jboss.seam</groupId>
    <artifactId>seam-parent</artifactId>
    <packaging>pom</packaging>
-   <version>9-SNAPSHOT</version>
+   <version>9</version>
    <name>Seam Parent</name>
 
    <parent>
@@ -720,9 +720,7 @@
                         <configuration>
                            <tasks>
                               <echo taskname="selenium-shutdown" message="DGF Errors during shutdown are expected" />
-                              <get taskname="selenium-shutdown"
-                                 src="http://${selenium.server.host}:${selenium.server.port}/selenium-server/driver/?cmd=shutDownSeleniumServer"
-                                 ignoreerrors="true" dest="${selenium.log.dir}/selenium.stop.msg" />
+                              <get taskname="selenium-shutdown" src="http://${selenium.server.host}:${selenium.server.port}/selenium-server/driver/?cmd=shutDownSeleniumServer" ignoreerrors="true" dest="${selenium.log.dir}/selenium.stop.msg" />
                            </tasks>
                         </configuration>
                         <goals>
