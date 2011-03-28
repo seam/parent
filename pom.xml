@@ -5,7 +5,7 @@
    <groupId>org.jboss.seam</groupId>
    <artifactId>seam-parent</artifactId>
    <packaging>pom</packaging>
-   <version>10</version>
+   <version>11-SNAPSHOT</version>
    <name>Seam Parent</name>
 
    <parent>
