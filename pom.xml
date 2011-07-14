@@ -161,13 +161,6 @@
 
          <dependency>
             <groupId>org.jboss.arquillian.container</groupId>
-            <artifactId>arquillian-glassfish-remote-3.1</artifactId>
-            <version>${arquillian.glassfish.version}</version>
-            <scope>test</scope>
-         </dependency>
-
-         <dependency>
-            <groupId>org.jboss.arquillian.container</groupId>
             <artifactId>arquillian-jetty-embedded-7</artifactId>
             <version>${arquillian.jetty.version}</version>
             <scope>test</scope>
