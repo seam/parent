@@ -115,12 +115,6 @@
          </dependency>
 
          <dependency>
-            <groupId>org.jboss.arquillian.test</groupId>
-            <artifactId>arquillian-test-api</artifactId>
-            <version>1.0.0.CR2</version>
-         </dependency>
-
-         <dependency>
             <groupId>org.jboss.arquillian.junit</groupId>
             <artifactId>arquillian-junit-container</artifactId>
             <version>${arquillian.version}</version>
@@ -186,13 +180,6 @@
          <dependency>
             <groupId>org.jboss.arquillian.container</groupId>
             <artifactId>arquillian-weld-se-embedded-1.1</artifactId>
-            <version>${arquillian.version}</version>
-            <scope>test</scope>
-         </dependency>
-
-         <dependency>
-            <groupId>org.jboss.arquillian.container</groupId>
-            <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
             <version>${arquillian.version}</version>
             <scope>test</scope>
          </dependency>
