@@ -68,7 +68,6 @@
 
       <glassfish.el.version>2.2.1-b04</glassfish.el.version>
 
-      <jboss.logging.tools.version>1.0.0.Beta1</jboss.logging.tools.version>
       <hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
       <hibernate.core.version>4.0.0.Beta5</hibernate.core.version>
       <openjpa.version>2.0.0</openjpa.version>
@@ -101,14 +100,7 @@
 
    <dependencyManagement>
       <dependencies>
-
-         <dependency>
-            <groupId>org.jboss.logging</groupId>
-            <artifactId>jboss-logging-tools</artifactId>
-            <version>${jboss.logging.tools.version}</version>
-            <scope>provided</scope>
-         </dependency>
-         
+        
          <!-- TESTING -->
 
          <dependency>
