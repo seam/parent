@@ -58,11 +58,15 @@
       <arquillian.weld.version>1.0.0.CR2</arquillian.weld.version>
       <arquillian.glassfish.version>1.0.0.CR1</arquillian.glassfish.version>
 
+      <!-- Container versions -->
+      <jbossas7.version>7.0.1.Final</jbossas7.version>
+      <glassfish.embedded.version>3.1.1</glassfish.embedded.version>
 
       <mortbay.jetty.version>6.1.26</mortbay.jetty.version>
       <eclipse.jetty.version>8.0.0.M1</eclipse.jetty.version>
 
       <slf4j.version>1.6.1</slf4j.version>
+      <log4j.version>1.2.16</log4j.version>
 
       <weld.api.version>1.1.Final</weld.api.version>
       <weld.version>1.1.0.Final</weld.version>
@@ -73,6 +77,7 @@
       <hibernate.core.version>4.0.0.Beta5</hibernate.core.version>
       <openjpa.version>2.0.0</openjpa.version>
 
+      <jboss_javaee6_spec.version>2.0.0.Final</jboss_javaee6_spec.version>
       <jsf.impl.version>2.0.2</jsf.impl.version>
       <jsfmock.version>1.0.6</jsfmock.version>
       <prettyfaces.version>3.22.0</prettyfaces.version>
@@ -98,6 +103,22 @@
    <prerequisites>
       <maven>3.0</maven>
    </prerequisites>
+   
+   <modules>
+      <module>test/glassfish-embedded-3.1</module>
+      <!--module>test/glassfish-remote-3.1</module>
+      <module>test/jbossas-managed-6</module-->
+      <module>test/jbossas-managed-7</module>
+      <!--module>test/jbossas-remote-6</module>
+      <module>test/jbossas-remote-7</module>
+      <module>test/jetty-embedded-7</module>
+      <module>test/openejb-embedded-3.1</module>
+      <module>test/openwebbeans-embedded-1</module>
+      <module>test/resin-embedded-4</module>
+      <module>test/tomcat-embedded-6</module-->
+      <module>test/weld-ee-embedded-1.1</module>
+      <!--module>test/weld-se-embedded-1.1</module-->
+   </modules>
 
    <dependencyManagement>
       <dependencies>
@@ -153,6 +174,21 @@
             <version>${arquillian.version}</version>
             <scope>import</scope>
             <type>pom</type>
+         </dependency>
+         
+         <!-- Required for testing in AS7, managed mode -->
+         <dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-arquillian-container-managed</artifactId>
+            <version>${jbossas7.version}</version>
+            <scope>compile</scope>
+         </dependency>
+         
+         <dependency>
+            <groupId>org.glassfish.extras</groupId>
+            <artifactId>glassfish-embedded-all</artifactId>
+            <version>${glassfish.embedded.version}</version>
+            <scope>compile</scope>
          </dependency>
 
          <dependency>
@@ -341,6 +377,21 @@
             <scope>runtime</scope>
          </dependency>
          
+         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+         </dependency>
+         
+         <!-- Required for Weld EE embedded -->
+         <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+            <scope>runtime</scope>
+         </dependency>
+         
          <!-- WELD -->
 
          <dependency>
@@ -371,6 +422,21 @@
             <groupId>org.jboss.weld.servlet</groupId>
             <artifactId>weld-servlet</artifactId>
             <version>${weld.version}</version>
+         </dependency>
+         
+         <!-- Java EE6 dependencies -->
+         <dependency>
+            <groupId>org.jboss.spec</groupId>
+            <artifactId>jboss-javaee-web-6.0</artifactId>
+            <version>${jboss_javaee6_spec.version}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+            <exclusions>
+               <exclusion>
+                  <groupId>org.apache.xalan</groupId>
+                  <artifactId>xalan</artifactId>
+               </exclusion>
+            </exclusions>
          </dependency>
          
          <!-- JSF -->
