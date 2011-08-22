@@ -96,6 +96,10 @@
       <richfaces.selenium.version>1.5.1.Final</richfaces.selenium.version>
       <ftest.testng.version>5.12.1</ftest.testng.version>
       <selenium.maven.plugin.version>1.1</selenium.maven.plugin.version>
+
+      <weld.docbook.version>1.1.1-Beta3</weld.docbook.version>
+      <seam.docbook.version>1.1.0.GA</seam.docbook.version>
+      <jbossorg.docbook.version>1.1.0</jbossorg.docbook.version>
       
       <!-- Repository Deployment URLs -->
       <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
@@ -602,6 +606,11 @@
                <version>2.3.5</version>
                <extensions>true</extensions>
                <dependencies>
+                  <!--dependency>
+                     <groupId>org.jboss.weld</groupId>
+                     <artifactId>weld-docbook-xslt</artifactId>
+                     <version>${weld.docbook.version}</version>
+                  </dependency-->
                   <dependency>
                      <groupId>org.jboss.seam</groupId>
                      <artifactId>seam-docbook-xslt</artifactId>
@@ -633,17 +642,17 @@
                   <formats>
                      <format>
                         <formatName>pdf</formatName>
-                        <stylesheetResource>classpath:/xslt/org/jboss/weld/pdf.xsl</stylesheetResource>
+                        <stylesheetResource>classpath:/xslt/org/jboss/seam/pdf.xsl</stylesheetResource>
                         <finalName>${pdf.name}</finalName>
                      </format>
                      <format>
                         <formatName>html</formatName>
-                        <stylesheetResource>classpath:/xslt/org/jboss/weld/xhtml.xsl</stylesheetResource>
+                        <stylesheetResource>classpath:/xslt/org/jboss/seam/xhtml.xsl</stylesheetResource>
                         <finalName>index.html</finalName>
                      </format>
                      <format>
                         <formatName>html_single</formatName>
-                        <stylesheetResource>classpath:/xslt/org/jboss/weld/xhtml-single.xsl</stylesheetResource>
+                        <stylesheetResource>classpath:/xslt/org/jboss/seam/xhtml-single.xsl</stylesheetResource>
                         <finalName>index.html</finalName>
                      </format>
                   </formats>
@@ -712,6 +721,7 @@
                            <descriptor>src/main/assembly/assembly.xml</descriptor>
                         </descriptors>
                         <finalName>${project.build.finalName}-${project.version}</finalName>
+                        <appendAssemblyId>false</appendAssemblyId>
                      </configuration>
                   </execution>
                </executions>
