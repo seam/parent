@@ -57,10 +57,12 @@
       <arquillian.tomcat.version>1.0.0.CR1</arquillian.tomcat.version>
       <arquillian.weld.version>1.0.0.CR2</arquillian.weld.version>
       <arquillian.glassfish.version>1.0.0.CR1</arquillian.glassfish.version>
+      <arquillian.openwebbeans.version>1.0.0.CR1</arquillian.openwebbeans.version>
 
       <!-- Container versions -->
       <jbossas7.version>7.0.1.Final</jbossas7.version>
       <glassfish.embedded.version>3.1.1</glassfish.embedded.version>
+      <openwebbeans.version>1.0.0</openwebbeans.version>
       
       <!-- Container BOM version - UPDATE WHEN UPDATING THIS POM VERSION!!! -->
       <container.bom.version>15-SNAPSHOT</container.bom.version>
@@ -119,9 +121,9 @@
       <!--module>test/jbossas-remote-6</module>
       <module>test/jbossas-remote-7</module>
       <module>test/jetty-embedded-7</module>
-      <module>test/openejb-embedded-3.1</module>
+      <module>test/openejb-embedded-3.1</module-->
       <module>test/openwebbeans-embedded-1</module>
-      <module>test/resin-embedded-4</module>
+      <!--module>test/resin-embedded-4</module>
       <module>test/tomcat-embedded-6</module-->
       <module>test/weld-ee-embedded-1.1</module>
       <!--module>test/weld-se-embedded-1.1</module-->
@@ -196,7 +198,16 @@
             <artifactId>jboss-as-dist</artifactId>
             <version>${jbossas7.version}</version>
          </dependency>
-         
+
+         <!-- OpenWebBeans dependencies -->
+         <dependency>
+            <groupId>org.apache.openwebbeans</groupId>
+            <artifactId>openwebbeans</artifactId>   
+            <version>${openwebbeans.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+          
          <!-- Glassfish dependencies -->
          
          <dependency>
@@ -268,6 +279,13 @@
             <version>${arquillian.weld.version}</version>
             <scope>test</scope>
          </dependency>
+
+         <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-openwebbeans-embedded-1</artifactId>
+            <version>${arquillian.openwebbeans.version}</version>
+            <scope>test</scope>
+         </dependency> 
 
          <dependency>
             <groupId>org.jboss.arquillian.container</groupId>
@@ -372,7 +390,15 @@
             <type>pom</type>
             <scope>test</scope>
          </dependency>
-         
+
+         <dependency>
+            <groupId>org.jboss.seam.test</groupId>
+            <artifactId>openwebbeans-embedded-1</artifactId>
+            <version>${container.bom.version}</version>
+            <type>pom</type>
+            <scope>test</scope>
+         </dependency>
+
          <!-- Selenium is used to drive functional tests -->
          
          <dependency>
