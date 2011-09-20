@@ -60,6 +60,7 @@
       <arquillian.weld.version>1.0.0.CR2</arquillian.weld.version>
       <arquillian.glassfish.version>1.0.0.CR1</arquillian.glassfish.version>
       <arquillian.openwebbeans.version>1.0.0.CR1</arquillian.openwebbeans.version>
+      <arquillian.maven.plugin.version>1.0.0.Alpha1</arquillian.maven.plugin.version>
 
       <!-- Container versions -->
       <jbossas7.version>7.0.1.Final</jbossas7.version>
@@ -1144,6 +1145,12 @@
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-scm-plugin</artifactId>
                <version>1.4</version>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.jboss.arquillian.maven</groupId>
+                <artifactId>arquillian-maven-plugin</artifactId>
+                <version>${arquillian.maven.plugin.version}</version>
             </plugin>
             
          </plugins>
