@@ -5,7 +5,7 @@
    <groupId>org.jboss.seam</groupId>
    <artifactId>seam-parent</artifactId>
    <packaging>pom</packaging>
-   <version>15</version>
+   <version>16-SNAPSHOT</version>
    <name>Seam Parent</name>
 
    <description>
@@ -68,7 +68,7 @@
       <openwebbeans.version>1.0.0</openwebbeans.version>
       
       <!-- Container BOM version - UPDATE WHEN UPDATING THIS POM VERSION!!! -->
-      <container.bom.version>15</container.bom.version>
+      <container.bom.version>16-SNAPSHOT</container.bom.version>
 
       <mortbay.jetty.version>6.1.26</mortbay.jetty.version>
       <eclipse.jetty.version>8.0.0.M1</eclipse.jetty.version>
