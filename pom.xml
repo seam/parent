@@ -60,6 +60,7 @@
       <arquillian.glassfish.version>1.0.0.CR1</arquillian.glassfish.version>
       <arquillian.openwebbeans.version>1.0.0.CR1</arquillian.openwebbeans.version>
       <arquillian.maven.plugin.version>1.0.0.Alpha1</arquillian.maven.plugin.version>
+      <arquillian.openshift.express.version>1.0.0.Alpha1</arquillian.openshift.express.version>
 
       <!-- Container versions -->
       <jbossas7.version>7.0.2.Final</jbossas7.version>
@@ -129,6 +130,7 @@
       <module>test/tomcat-embedded-6</module-->
       <module>test/weld-ee-embedded-1.1</module>
       <!--module>test/weld-se-embedded-1.1</module-->
+      <module>test/openshift-express</module>
    </modules>
 
    <dependencyManagement>
@@ -311,6 +313,13 @@
             <version>${arquillian.weld.version}</version>
             <scope>test</scope>
          </dependency>
+         
+         <dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-openshift-express</artifactId>
+            <version>${arquillian.openshift.express.version}</version>
+            <scope>test</scope>
+         </dependency>
 
          <dependency>
             <groupId>org.mortbay.jetty</groupId>
@@ -437,6 +446,14 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>openwebbeans-embedded-1</artifactId>
+            <version>${container.bom.version}</version>
+            <type>pom</type>
+            <scope>test</scope>
+         </dependency>
+         
+         <dependency>
+            <groupId>org.jboss.seam.test</groupId>
+            <artifactId>openshift-express</artifactId>
             <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
