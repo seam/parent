@@ -210,14 +210,14 @@
             <groupId>org.jboss.as</groupId>
             <artifactId>jboss-as-arquillian-container-managed</artifactId>
             <version>${jbossas7.version}</version>
-            <scope>compile</scope>
+            <scope>test</scope>
          </dependency>
          
          <dependency>
             <groupId>org.jboss.as</groupId>
             <artifactId>jboss-as-arquillian-container-remote</artifactId>
             <version>${jbossas7.version}</version>
-            <scope>compile</scope>
+            <scope>test</scope>
          </dependency>
          
          <dependency>
