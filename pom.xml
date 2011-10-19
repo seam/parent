@@ -52,7 +52,7 @@
       <!-- Arquillian versions -->
       <arquillian.version>1.0.0.CR5</arquillian.version>
       <arquillian.drone.version>1.0.0.CR2</arquillian.drone.version>
-      <arquillian.ajocado.version>1.0.0.CR1</arquillian.ajocado.version>
+      <arquillian.ajocado.version>1.0.0.CR2</arquillian.ajocado.version>
       <arquillian.jboss.version>1.0.0.CR2</arquillian.jboss.version>
       <arquillian.jetty.version>1.0.0.CR1</arquillian.jetty.version>
       <arquillian.tomcat.version>1.0.0.CR2</arquillian.tomcat.version>
