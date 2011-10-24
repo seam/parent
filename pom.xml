@@ -390,7 +390,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>jbossas-managed-7</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
@@ -398,7 +398,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>jbossas-remote-7</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
@@ -406,7 +406,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>jbossas-managed-6</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
@@ -414,7 +414,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>jbossas-remote-6</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
@@ -422,7 +422,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>weld-ee-embedded-1.1</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
@@ -430,7 +430,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>glassfish-embedded-3.1</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
@@ -438,7 +438,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>glassfish-remote-3.1</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
@@ -446,7 +446,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>openwebbeans-embedded-1</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
@@ -454,7 +454,7 @@
          <dependency>
             <groupId>org.jboss.seam.test</groupId>
             <artifactId>openshift-express</artifactId>
-            <version>${project.version}</version>
+            <version>${container.bom.version}</version>
             <type>pom</type>
             <scope>test</scope>
          </dependency>
