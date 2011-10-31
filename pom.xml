@@ -88,7 +88,6 @@
       <jboss_javaee6_spec.version>2.0.0.Final</jboss_javaee6_spec.version>
       <jsf.impl.version>2.0.2</jsf.impl.version>
       <jsfmock.version>1.0.6</jsfmock.version>
-      <prettyfaces.version>3.2.0</prettyfaces.version>
       <hsqldb.version>1.8.0.10</hsqldb.version>
       <subetha.version>3.1.4</subetha.version>
       <jersey.version>1.5</jersey.version>
@@ -601,24 +600,6 @@
             <version>${jsfmock.version}</version>
             <scope>test</scope>
          </dependency>
-
-         <dependency>
-            <groupId>com.ocpsoft</groupId>
-            <artifactId>prettyfaces-jsf11</artifactId>
-            <version>${prettyfaces.version}</version>
-         </dependency>
-
-         <dependency>
-            <groupId>com.ocpsoft</groupId>
-            <artifactId>prettyfaces-jsf12</artifactId>
-            <version>${prettyfaces.version}</version>
-         </dependency>
-
-         <dependency>
-            <groupId>com.ocpsoft</groupId>
-            <artifactId>prettyfaces-jsf2</artifactId>
-            <version>${prettyfaces.version}</version>
-         </dependency>         
          
          <!-- EL -->
 
