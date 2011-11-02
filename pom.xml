@@ -82,14 +82,14 @@
       <glassfish.el.version>2.2.1-b04</glassfish.el.version>
 
       <hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
-      <hibernate.core.version>4.0.0.Beta5</hibernate.core.version>
+      <hibernate.core.version>4.0.0.CR5</hibernate.core.version>
       <openjpa.version>2.0.0</openjpa.version>
 
       <jboss_javaee6_spec.version>2.0.0.Final</jboss_javaee6_spec.version>
       <jsf.impl.version>2.0.2</jsf.impl.version>
       <jsfmock.version>1.0.6</jsfmock.version>
       <prettyfaces.version>3.2.0</prettyfaces.version>
-      <hsqldb.version>1.8.0.10</hsqldb.version>
+      <hsqldb.version>2.2.4</hsqldb.version>
       <subetha.version>3.1.4</subetha.version>
       <jersey.version>1.5</jersey.version>
 
