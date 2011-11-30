@@ -70,7 +70,7 @@
       <openwebbeans.version>1.0.0</openwebbeans.version>
       
       <!-- Container BOM version - UPDATE WHEN UPDATING THIS POM VERSION!!! -->
-      <container.bom.version>18-SNAPSHOT</container.bom.version>
+      <container.bom.version>18</container.bom.version>
 
       <mortbay.jetty.version>6.1.26</mortbay.jetty.version>
       <eclipse.jetty.version>8.0.0.M1</eclipse.jetty.version>
