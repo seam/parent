@@ -58,7 +58,7 @@
       <arquillian.jboss.version>1.0.0.CR2</arquillian.jboss.version>
       <arquillian.jetty.version>1.0.0.CR1</arquillian.jetty.version>
       <arquillian.tomcat.version>1.0.0.CR2</arquillian.tomcat.version>
-      <arquillian.weld.version>1.0.0.CR2</arquillian.weld.version>
+      <arquillian.weld.version>1.0.0.CR3</arquillian.weld.version>
       <arquillian.glassfish.version>1.0.0.CR2</arquillian.glassfish.version>
       <arquillian.openwebbeans.version>1.0.0.CR1</arquillian.openwebbeans.version>
       <arquillian.maven.plugin.version>1.0.0.Alpha1</arquillian.maven.plugin.version>
