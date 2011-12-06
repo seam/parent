@@ -19,5 +19,12 @@
             <artifactId>arquillian-glassfish-remote-3.1</artifactId>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+           <groupId>org.jboss.spec</groupId>
+           <artifactId>jboss-javaee-web-6.0</artifactId>
+           <type>pom</type>
+           <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>
