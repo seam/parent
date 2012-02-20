@@ -51,7 +51,7 @@
       <jacoco.version>0.5.3.201107060350</jacoco.version>
 
       <!-- Arquillian versions -->
-      <arquillian.version>1.0.0.CR6</arquillian.version>
+      <arquillian.version>1.0.0.CR7</arquillian.version>
       <arquillian.drone.version>1.0.0.CR2</arquillian.drone.version>
       <arquillian.ajocado.version>1.0.0.CR2</arquillian.ajocado.version>
       <arquillian.jacoco.version>1.0.0.Alpha2</arquillian.jacoco.version>
@@ -65,7 +65,7 @@
       <arquillian.openshift.express.version>1.0.0.Alpha1</arquillian.openshift.express.version>
 
       <!-- Container versions -->
-      <jbossas7.version>7.0.2.Final</jbossas7.version>
+      <jbossas7.version>7.1.0.Final</jbossas7.version>
       <glassfish.embedded.version>3.1.1</glassfish.embedded.version>
       <openwebbeans.version>1.0.0</openwebbeans.version>
       
